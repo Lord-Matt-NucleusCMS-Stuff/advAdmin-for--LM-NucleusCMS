@@ -48,10 +48,10 @@ New Events
 advAdmin Core
 =============
 
-+advAdmin_index.php          - a forked version of index.php where we hook 
++ advAdmin_index.php         - a forked version of index.php where we hook 
 + .access                    - force apache to use advAdmin_index.php and taking
                                over with our new file without core edits.
-+./advAdmin                  - the core folder
++ ./advAdmin                 - the core folder
     + .htaccess              - security measure
     + .README                - This file
     + advAdmin.php           - The bootstrap that loads everything else
@@ -59,7 +59,7 @@ advAdmin Core
     + advAdmin_factory.php   - this is our factory class. Things would be much 
                                easier if the core did this but them's the breaks
     + advAdmin_simpleXML.php - extra features for page editing
-+./plugins
++ ./plugins
     + NP_AdvAdminBasicDemoOne - An example of the process being used. It's a bit 
                                 useless beyond showing off that it all works.
 
