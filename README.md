@@ -14,6 +14,17 @@ would not be needed.
 
 Currently plugins can extend this to edit the admin area with simpleXML.
 
+INSTALL
+=======
+To install you need a copy of NucleusCMS set up.
+
+Copy all root files and folders to the /nucleus/ folder so that the demo plugin 
+ends up in plugins where it should be and advAdmin files (with the one exception
+of advAdmin_index.php) end up in the advAdmin folder. 
+
+Install the plugin as normal. If you see a pointless box in your admin area it 
+all worked. Now uninstall the demo plugin and write something cool.
+
 Progress:
 ========
 
