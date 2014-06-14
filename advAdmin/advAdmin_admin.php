@@ -12,12 +12,16 @@
  *               transformed however needed to DOM or whatever. This event is 
  *               RECOMENDED for admin area editing.  You will find the object in 
  *               $data['PAGE'].
+ * 
+ * 1.0           Initial version.
+ * 1.1           Added action and version information to event data
  *
  * @author lordmatt
  */                                   
 class advAdmin_admin extends ADMIN{
 
     protected $PAGE='';
+    protected $advVer = 1.1;
 
     /**
      * This steps in nice and early and stops the output from doing anything yet
@@ -46,7 +50,9 @@ class advAdmin_admin extends ADMIN{
          * First we simple hand out the HTML for people to use string editing 
          */
         $data = array(
-                'PAGE' => &$this->PAGE
+                'PAGE' => &$this->PAGE,
+                'action' => $this->action,
+                'advVer' => $this->advVer
         );
         $manager->notify('allAdminHTML', $data);
         
@@ -69,7 +75,9 @@ class advAdmin_admin extends ADMIN{
         //$xmlObject = simplexml_load_string($this->PAGE,'advAdmin_simpleXML');
         
         $data = array(
-                'PAGE' => $xmlObject
+                'PAGE' => $xmlObject,
+                'action' => $this->action,
+                'advVer' => $this->advVer
         );
         $manager->notify('allAdminXML', $data);
         $doc = dom_import_simplexml($xmlObject);
@@ -87,7 +95,9 @@ class advAdmin_admin extends ADMIN{
     }    
     
     
-    
+    public function get_advVer(){
+        return $this->advVer;
+    }
     
 }
 
